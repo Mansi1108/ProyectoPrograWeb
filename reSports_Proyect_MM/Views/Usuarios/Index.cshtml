@@ -1,0 +1,110 @@
+﻿@model IEnumerable<reSports_Proyect_MM.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="d-flex justify-content-between align-items-center">
+    <div>
+        <h1>Usuarios</h1>
+    </div>
+    <div>
+        <a class="btn btn-primary" href="Usuarios/Create" style="background-color:#1089e4;">Crear Nuevo</a>
+    </div>
+</div>
+
+<div class="container-sm mt-2 p-3" style="background-color:#1089e4; border-radius: 10px;">
+    <div class=" text-center mx-auto">
+        <table class="table" style="color: #FFFF;">
+            <thead>
+                <tr>
+                    <th>
+                        <span>Usuario</span>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th>
+                        <span>Nombre Completo</span>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Genero)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Edad)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Experiencia)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Posicion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Equipo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Rol)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NombreUsuario)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NombreCompleto)
+                        </td>
+                        <td>
+                            @if (item.Genero == "0")
+                            {
+                                <span>Masculino</span>
+                            }
+                            else
+                            {
+                                <span>Femenino</span>
+                            }
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Edad)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Experiencia)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Posicion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EquipoId)
+                        </td>
+                        <td>
+                            @if (item.Rol == 1)
+                            {
+                                <span>Entrenador</span>
+                            } else if(item.Rol == 2)
+                            {
+                                <span>Jugador</span>
+                            } else
+                            {
+                                <span>Support</span>
+                            }
+                        </td>
+                        <td>
+                            <a style="color:#FFFF" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a style="color:#FFFF" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                            <a style="color:#FFFF" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+    

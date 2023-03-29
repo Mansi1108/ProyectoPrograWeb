@@ -1,0 +1,12 @@
+C:\Users\Melissa\Documents\URL\2023\Primer Ciclo\Programación Web\Proyecto\reSports_Proyect_MM\reSportsModel\bin\Debug\net7.0\reSportsModel.deps.json
+C:\Users\Melissa\Documents\URL\2023\Primer Ciclo\Programación Web\Proyecto\reSports_Proyect_MM\reSportsModel\bin\Debug\net7.0\reSportsModel.dll
+C:\Users\Melissa\Documents\URL\2023\Primer Ciclo\Programación Web\Proyecto\reSports_Proyect_MM\reSportsModel\bin\Debug\net7.0\reSportsModel.pdb
+C:\Users\Melissa\Documents\URL\2023\Primer Ciclo\Programación Web\Proyecto\reSports_Proyect_MM\reSportsModel\obj\Debug\net7.0\reSportsModel.csproj.AssemblyReference.cache
+C:\Users\Melissa\Documents\URL\2023\Primer Ciclo\Programación Web\Proyecto\reSports_Proyect_MM\reSportsModel\obj\Debug\net7.0\reSportsModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Melissa\Documents\URL\2023\Primer Ciclo\Programación Web\Proyecto\reSports_Proyect_MM\reSportsModel\obj\Debug\net7.0\reSportsModel.AssemblyInfoInputs.cache
+C:\Users\Melissa\Documents\URL\2023\Primer Ciclo\Programación Web\Proyecto\reSports_Proyect_MM\reSportsModel\obj\Debug\net7.0\reSportsModel.AssemblyInfo.cs
+C:\Users\Melissa\Documents\URL\2023\Primer Ciclo\Programación Web\Proyecto\reSports_Proyect_MM\reSportsModel\obj\Debug\net7.0\reSportsModel.csproj.CoreCompileInputs.cache
+C:\Users\Melissa\Documents\URL\2023\Primer Ciclo\Programación Web\Proyecto\reSports_Proyect_MM\reSportsModel\obj\Debug\net7.0\reSportsModel.dll
+C:\Users\Melissa\Documents\URL\2023\Primer Ciclo\Programación Web\Proyecto\reSports_Proyect_MM\reSportsModel\obj\Debug\net7.0\refint\reSportsModel.dll
+C:\Users\Melissa\Documents\URL\2023\Primer Ciclo\Programación Web\Proyecto\reSports_Proyect_MM\reSportsModel\obj\Debug\net7.0\reSportsModel.pdb
+C:\Users\Melissa\Documents\URL\2023\Primer Ciclo\Programación Web\Proyecto\reSports_Proyect_MM\reSportsModel\obj\Debug\net7.0\ref\reSportsModel.dll

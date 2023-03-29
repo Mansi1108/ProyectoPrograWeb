@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\reSports_Proyect_MM.props" />
+</Project>

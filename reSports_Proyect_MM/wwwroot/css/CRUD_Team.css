@@ -1,0 +1,17 @@
+
+.main2 {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFF;
+}
+
+div.container-md.text-center{
+    background-color: #1089e4; 
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+

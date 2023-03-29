@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\reSports_Proyect_MM.props" />
+</Project>
