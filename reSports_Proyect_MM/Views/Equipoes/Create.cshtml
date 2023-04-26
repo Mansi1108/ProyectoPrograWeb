@@ -4,12 +4,12 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Crear</h1>
-
-<h4>Nuevo Equipo</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 p-3" style="background-color:white; border-radius:10px">
+        <div>
+            <h1>Crear Equipo</h1>
+            <hr />
+        </div>
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -17,21 +17,20 @@
                 <input asp-for="Nombre" class="form-control" />
                 <span asp-validation-for="Nombre" class="text-danger"></span>
             </div>
-            <span>Masculino:
-                @Html.RadioButton("GeneroAux","Masculino")
+            <span>
+                @Html.RadioButtonFor(m => m.Genero, 0)
+                @Html.LabelFor(m => m.Genero, "Masculino")
             </span>
             <span>
-                Femenino:@Html.RadioButton("GeneroAux","Femenino")
+                @Html.RadioButtonFor(m => m.Genero, 1)
+                @Html.LabelFor(m => m.Genero, "Femenino")
             </span>
-            <div class="form-group mt-3">
-                <input type="submit" value="Create" class="btn btn-outline-success" />
+            <div class="d-flex justify-content-between align-items-center form-group mt-3 mb-3">
+                <input type="submit" value="Create" class="btn btn-success" />
+                @Html.ActionLink("Back To List", "Index")
             </div>
         </form>
     </div>
-</div>
-
-<div class="mt-3">
-    @Html.ActionLink("Volver a Lista Equipos", "Get")
 </div>
 
 @section Scripts {

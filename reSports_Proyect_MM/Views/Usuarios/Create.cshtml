@@ -13,12 +13,12 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="NombreUsuario" class="control-label"></label>
+                <label asp-for="NombreUsuario" class="control-label">Nombre Usuario</label>
                 <input asp-for="NombreUsuario" class="form-control" />
                 <span asp-validation-for="NombreUsuario" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Contrasena" class="control-label"></label>
+                <label asp-for="Contrasena" class="control-label">Contraseña</label>
                 <input asp-for="Contrasena" type="password" class="form-control" />
                 <span asp-validation-for="Contrasena" class="text-danger"></span>
             </div>
@@ -28,15 +28,18 @@
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="NombreCompleto" class="control-label"></label>
+                <label asp-for="NombreCompleto" class="control-label">Nombre Completo</label>
                 <input asp-for="NombreCompleto" class="form-control" />
                 <span asp-validation-for="NombreCompleto" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Genero" class="control-label"></label>
-                <input asp-for="Genero" class="form-control" />
-                <span asp-validation-for="Genero" class="text-danger"></span>
-            </div>
+            <span>
+                @Html.RadioButtonFor(m => m.Genero, 0)
+                @Html.LabelFor(m => m.Genero, "Masculino")
+            </span>
+            <span>
+                @Html.RadioButtonFor(m => m.Genero, 1)
+                @Html.LabelFor(m => m.Genero, "Femenino")
+            </span>
             <div class="form-group">
                 <label asp-for="Edad" class="control-label"></label>
                 <input asp-for="Edad" class="form-control" />
@@ -44,7 +47,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Experiencia" class="control-label"></label>
-                <input asp-for="Experiencia" class="form-control" />
+                <input asp-for="Experiencia" type="number" class="form-control" />
                 <span asp-validation-for="Experiencia" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -57,11 +60,11 @@
                 <select asp-for="Rol" class ="form-control" asp-items="ViewBag.Rol"></select>
             </div>
             <div class="form-group">
-                <label asp-for="EquipoId" class="control-label">Equipo</label>
+                <label asp-for="EquipoId" class="control-label">Nombre Equipo</label>
                 <select asp-for="EquipoId" class ="form-control" asp-items="ViewBag.EquipoId"></select>
             </div>
             <div class="form-group mb-3 mt-3">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-outline-success" />
             </div>
         </form>
     </div>

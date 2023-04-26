@@ -1,0 +1,43 @@
+﻿@model reSports_Proyect_MM.Models.Asistencium
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+
+<div class="p-2" style="background-color:white; border-radius:10px">
+    <h1>Detalles Asistencia</h1>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            <span>Fecha Asistencia</span>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaAsistencia)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Asistio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Asistio)
+        </dd>
+        <dt class = "col-sm-2">
+            <span>Razón Falta</span>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RazonFalta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Usuario)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Usuario.NombreUsuario)
+        </dd>
+    </dl>
+    <div class="mt-3 mb-3">
+        <a class="btn btn-primary btn" style="background-color:#1089e4;" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
+

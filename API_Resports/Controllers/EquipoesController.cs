@@ -42,7 +42,6 @@ namespace API_Resports.Controllers
                 Nombre = x.Nombre,
                 Genero = x.Genero
             }).FirstOrDefault(x => x.Id == id);
-
             return equipo1;
         }
 

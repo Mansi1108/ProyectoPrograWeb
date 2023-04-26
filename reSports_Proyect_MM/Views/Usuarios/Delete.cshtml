@@ -33,7 +33,13 @@
             @Html.DisplayNameFor(model => model.Genero)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Genero)
+            @if(Model.Genero == "0")
+            {
+                <span>Masculino</span>
+            } else
+            {
+                <span>Femenino</span>
+            }
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Edad)
@@ -45,7 +51,7 @@
             @Html.DisplayNameFor(model => model.Experiencia)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Experiencia)
+            @Html.DisplayFor(model => model.Experiencia) Años
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Posicion)
@@ -57,13 +63,23 @@
             @Html.DisplayNameFor(model => model.Rol)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Rol)
+            @if(Model.Rol == 1)
+            {
+                <span>Entrenador</span>
+            }
+            else if (Model.Rol == 2)
+            {
+                <span>Jugador</span>
+            } else
+            {
+                <span>Support</span>
+            }
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Equipo)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Equipo.Id)
+            @Html.DisplayFor(model => model.EquipoId)
         </dd>
     </dl>
     

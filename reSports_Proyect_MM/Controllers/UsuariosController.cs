@@ -23,8 +23,6 @@ namespace reSports_Proyect_MM.Controllers
         // GET: Usuarios
         public async Task<IActionResult> Index()
         {
-            API_Resports.Models.ResportsContext _context = new();
-            var resportsContext = _context.Usuarios.Include(u => u.Equipo).Include(u => u.RolNavigation);
             var usuarios = await _services.Get<IEnumerable<reSports_Proyect_MM.Models.Usuario>>();
 
             return View(usuarios);
@@ -33,7 +31,6 @@ namespace reSports_Proyect_MM.Controllers
         // GET: Usuarios/Details/5
         public async Task<IActionResult> Details(int id)
         {
-            API_Resports.Models.ResportsContext _context = new();
             var usuario = await _services.Get<reSports_Proyect_MM.Models.Usuario>(id.ToString());
 
             if (usuario == null) return NotFound();
@@ -60,6 +57,10 @@ namespace reSports_Proyect_MM.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,NombreUsuario,Contrasena,Email,NombreCompleto,Genero,Edad,Experiencia,Posicion,Rol,EquipoId")] reSports_Proyect_MM.Models.Usuario usuario)
         {
+            if (usuario.Rol == 1)
+            {
+                usuario.Posicion = "N/A";
+            }
             await _services.Post(usuario);
             return RedirectToAction(nameof(Index));
         }
@@ -85,11 +86,14 @@ namespace reSports_Proyect_MM.Controllers
         {
             API_Resports.Models.ResportsContext _context = new();
 
-            
-            ViewData["EquipoId"] = new SelectList(_context.Equipos, "Id", "Id", usuario.EquipoId);
-            ViewData["Rol"] = new SelectList(_context.Rolusuarios, "Id", "Id", usuario.Rol);
+            if(usuario.Rol == 1)
+            {
+                usuario.Posicion = "N/A";
+            }
 
             await _services.Put(usuario, usuario.Id.ToString());
+            ViewData["EquipoId"] = new SelectList(_context.Equipos, "Id", "Nombre", usuario.EquipoId);
+            ViewData["Rol"] = new SelectList(_context.Rolusuarios, "Id", "Nombre", usuario.Rol);
             return RedirectToAction(nameof(Index));
         }
 

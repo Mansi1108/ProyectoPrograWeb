@@ -4,10 +4,10 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1>Eliminar</h1>
+<div class="p-2" style="background-color:white; border-radius:10px">
+    <h1>Eliminar</h1>
 
-<h3>Está seguro que quiere eliminar el Equipo?</h3>
-<div>
+    <h3>Está seguro que quiere eliminar el Equipo?</h3>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -32,6 +32,6 @@
     
     <form asp-action="Delete">
         <input type="submit" value="Eliminar" class="btn btn-danger" /> |
-        @Html.ActionLink("Volver a Lista Equipos", "Get")
+        @Html.ActionLink("Volver a Lista Equipos", "Index")
     </form>
 </div>

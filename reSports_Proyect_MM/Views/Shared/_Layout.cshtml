@@ -14,8 +14,8 @@
     <header>
         <nav class="navbar navbar navbar-expand-sm navbar-toggleable-lg border-bottom mb-3" style="background-color: #1089e4;">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="~/Assets/Logo.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-bottom">
+                <a class="navbar-brand" asp-area="" asp-controller="Publicacions" asp-action="Index">
+                    <img src="~/img/Logo.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-bottom">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +24,7 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Publicacions" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Equipoes" asp-action="Index">Equipos</a>
@@ -33,10 +33,17 @@
                             <a class="nav-link text-light" asp-area="" asp-controller="Usuarios" asp-action="Index">Usuarios</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Asistenciums" asp-action="Index">Asistencia</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Acerca de Nosotros</a>
                         </li>
+                        
                     </ul>
                 </div>
+                <form class="form-inline">
+                    <button class="btn btn-danger my-2 my-sm-0" type="submit">Cerrar Sesión</button>
+                </form>
             </div>
         </nav>
     </header>
@@ -46,7 +53,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted" style="background-color:white">
         <div class="container">
             &copy; 2023 - ReSports - <a asp-area="" asp-controller="Home" asp-action="Privacy">Acerca de</a>
         </div>

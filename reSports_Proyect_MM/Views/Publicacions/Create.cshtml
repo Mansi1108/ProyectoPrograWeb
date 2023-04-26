@@ -1,0 +1,31 @@
+﻿@model reSports_Proyect_MM.Models.Publicacion
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-md-4 p-3" style="background-color:white; border-radius:10px">
+        <div>
+            <h1>Crear Publicacion</h1>
+            <hr />
+        </div>
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UsuarioId" class="control-label">Usuario</label>
+                <select asp-for="UsuarioId" class="form-control" asp-items="ViewBag.UsuarioId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mensaje" class="control-label"></label>
+                <input asp-for="Mensaje" class="form-control" />
+                <span asp-validation-for="Mensaje" class="text-danger"></span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center form-group mt-3 mb-3">
+                <input type="submit" value="Create" class="btn btn-success" />
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+

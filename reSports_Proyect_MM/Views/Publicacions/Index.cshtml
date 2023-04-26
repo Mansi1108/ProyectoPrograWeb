@@ -1,0 +1,49 @@
+﻿@model IEnumerable<reSportsModel.PublicacionMV>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <div class=" justify-content-start p-3" style=" background-color:white; border-radius: 10px; width: 30%;">
+        <h1>Muro Publicaciones</h1>
+    </div>
+    <div>
+        <a class="btn btn-primary btn-lg" href="@Url.Action("Create","Publicacions")" style="background-color:#1089e4;">Crear Nuevo</a>
+    </div>
+</div>
+
+@foreach (var item in Model)
+{
+    <div class="row mb-3">
+        <div class="col"></div>
+        <div class="col-8 p-4" style="background-color:#1089e4; border-radius:10px">
+            <div class=" d-flex align-content-between">
+                <h4 class="flex-grow-1" style="color:white">@Html.DisplayFor(modelItem => item.Usuario.NombreCompleto)</h4>
+               
+                    
+                <a class="btn btn-warning brn-sm mb-2 me-1" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                <a class="btn btn-danger brn-sm mb-2" asp-action="Delete" asp-route-id="@item.Id">X</a>
+                
+            </div>
+            <div class="container p-1 mx-1 my-1" style="background-color:white; border-radius:10px">
+                <span>@Html.DisplayFor(modelItem => item.RolNavigation.Nombre)</span><br>
+                <span>@Html.DisplayFor(modelItem => item.Equipo.Nombre)-
+                    @if (item.Equipo.Genero == 1)
+                    {
+                        <span>Femenino</span>
+                    } else
+                    {
+                        <span>Masculino</span>
+                    }
+                </span> <br>
+                <span>@Html.DisplayFor(modelItem => item.FechaPublicacion)</span>
+                <hr />
+                <div class="text-start">
+                    <span>@Html.DisplayFor(modelItem => item.Mensaje)</span>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+}

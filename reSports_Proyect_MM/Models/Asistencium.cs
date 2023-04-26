@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace reSports_Proyect_MM.Models;
 
 public partial class Asistencium
 {
     public int Id { get; set; }
+
+    [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
 
     public DateTime FechaAsistencia { get; set; }
 

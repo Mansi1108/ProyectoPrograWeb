@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using API_Resports.Models;
+using reSportsModel;
 
 namespace API_Resports.Controllers
 {
@@ -16,22 +17,47 @@ namespace API_Resports.Controllers
 
         // GET: api/Usuarios
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Usuario>>> GetUsuarios()
+        public async Task<IEnumerable<reSportsModel.UsuarioMV>> GetUsuarios()
         {
             ResportsContext _context = new();
-            if (_context.Usuarios == null)
+            IEnumerable<reSportsModel.UsuarioMV> usuarios1 = _context.Usuarios.Select(x => new reSportsModel.UsuarioMV
             {
-                return NotFound();
+                Id = x.Id,
+                NombreUsuario = x.NombreUsuario,
+                Contrasena = x.Contrasena,
+                Email= x.Email,
+                NombreCompleto= x.NombreCompleto,
+                Genero= x.Genero,
+                Edad = x.Edad,
+                Experiencia= x.Experiencia,
+                Posicion= x.Posicion,
+                Rol = x.Rol,
+                EquipoId = x.EquipoId,
+            }).ToList();
+
+            foreach (var usuario in usuarios1)
+            {
+                Equipo equipo = _context.Equipos.Find(usuario.EquipoId);
+                Rolusuario rol = _context.Rolusuarios.Find(usuario.Rol);
+                usuario.RolNavigation = new reSportsModel.RolUsuarioM
+                {
+                    Nombre = rol.Nombre,
+                };
+                usuario.Equipo = new reSportsModel.EquipoM
+                {
+                    Nombre = equipo.Nombre
+                };
             }
-            return await _context.Usuarios.ToListAsync();
+
+            return usuarios1;
         }
 
         // GET: api/Usuarios/5
         [HttpGet("{id}")]
-        public async Task<reSportsModel.UsuariosM> GetUsuario(int id)
+        public async Task<reSportsModel.UsuarioMV> GetUsuario(int id)
         {
             ResportsContext _context = new();
-            reSportsModel.UsuariosM usuario1 = _context.Usuarios.Select(x => new reSportsModel.UsuariosM
+            reSportsModel.UsuarioMV usuario1 = _context.Usuarios.Select(x => new reSportsModel.UsuarioMV
             {
                 Id = x.Id,
                 NombreUsuario = x.NombreUsuario,
@@ -46,6 +72,16 @@ namespace API_Resports.Controllers
                 EquipoId = x.EquipoId,
             }).FirstOrDefault(x => x.Id == id);
 
+            Equipo equipo = _context.Equipos.Find(usuario1.EquipoId);
+            Rolusuario rol = _context.Rolusuarios.Find(usuario1.Rol);
+            usuario1.RolNavigation = new reSportsModel.RolUsuarioM
+            {
+                Nombre = rol.Nombre,
+            };
+            usuario1.Equipo = new reSportsModel.EquipoM
+            {
+                Nombre = equipo.Nombre
+            };
             return usuario1;
         }
 

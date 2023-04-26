@@ -6,11 +6,11 @@
 
 
 <div class="d-flex justify-content-between align-items-center">
-    <div>
+    <div class=" justify-content-start p-3" style=" background-color:white; border-radius: 10px; width: 20%;">
         <h1>Usuarios</h1>
     </div>
     <div>
-        <a class="btn btn-primary" href="Usuarios/Create" style="background-color:#1089e4;">Crear Nuevo</a>
+        <a class="btn btn-primary btn-lg" href="@Url.Action("Create","Usuarios")" style="background-color:#1089e4;">Crear Nuevo</a>
     </div>
 </div>
 
@@ -82,19 +82,10 @@
                             @Html.DisplayFor(modelItem => item.Posicion)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.EquipoId)
+                            @Html.DisplayFor(modelItem => item.Equipo.Nombre)
                         </td>
                         <td>
-                            @if (item.Rol == 1)
-                            {
-                                <span>Entrenador</span>
-                            } else if(item.Rol == 2)
-                            {
-                                <span>Jugador</span>
-                            } else
-                            {
-                                <span>Support</span>
-                            }
+                            @Html.DisplayFor(modelItem => item.RolNavigation.Nombre)
                         </td>
                         <td>
                             <a style="color:#FFFF" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
