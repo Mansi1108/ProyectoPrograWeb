@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="row">
+    <div class="col"></div>
+    <div class="col-md-4" style="background-color:white; border-radius:10px">
+        <div>
+            <h1>Registrar</h1>
+            <hr />
+        </div>
+        <form asp-action="Register">
+            <div class="form-group">
+                <label class="control-label">Nombre Usuario</label>
+                <input type="text" name="NombreUsuario" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Nombre Completo</label>
+                <input type="text" name="NombreCompleto" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Contraseña</label>
+                <input type="password" name="Contrasena" class="form-control" />
+            </div>      
+            <div class="form-group">
+                <label class="control-label">Email</label>
+                <input type="email" name="Email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Masculino:</label>
+                @Html.RadioButton("Genero","1")
+                <label class="control-label">Femenino:</label>
+                @Html.RadioButton("Genero","0")
+            </div>
+            <div class="form-group">
+                <label class="control-label">Edad</label>
+                <input type="number" name="Edad" class="form-control" />
+            </div>
+            <div class="form-group mb-3 mt-3">
+                <input type="submit" value="Create" class="btn btn-outline-success" />
+            </div>
+        </form>
+    </div>
+    <div class="col"></div>
+</div>

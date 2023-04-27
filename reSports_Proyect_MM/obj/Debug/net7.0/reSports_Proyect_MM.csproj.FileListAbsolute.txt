@@ -298,3 +298,4 @@ C:\Users\Melissa\Documents\URL\2023\Primer Ciclo\Programación Web\Proyecto\reSp
 C:\Users\Melissa\Documents\URL\2023\Primer Ciclo\Programación Web\Proyecto\reSports_Proyect_MM\reSports_Proyect_MM\obj\Debug\net7.0\reSports_Proyect_MM.pdb
 C:\Users\Melissa\Documents\URL\2023\Primer Ciclo\Programación Web\Proyecto\reSports_Proyect_MM\reSports_Proyect_MM\obj\Debug\net7.0\reSports_Proyect_MM.genruntimeconfig.cache
 C:\Users\Melissa\Documents\URL\2023\Primer Ciclo\Programación Web\Proyecto\reSports_Proyect_MM\reSports_Proyect_MM\obj\Debug\net7.0\ref\reSports_Proyect_MM.dll
+C:\Users\Melissa\Documents\URL\2023\Primer Ciclo\Programación Web\Proyecto\reSports_Proyect_MM\reSports_Proyect_MM\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

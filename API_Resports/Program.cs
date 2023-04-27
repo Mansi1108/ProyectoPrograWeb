@@ -1,5 +1,11 @@
+using API_Resports.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddTransient<ResportsContext>();
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -23,3 +29,50 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+#region authentication
+
+builder.Services.Configure<ForwardedHeadersOptions>(option =>
+
+option.ForwardedHeaders = Microsoft.AspNetCore.HttpOverrides.ForwardedHeaders.XForwardedFor
+
+| Microsoft.AspNetCore.HttpOverrides.ForwardedHeaders.XForwardedProto);
+
+
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+
+{
+
+    options.RequireHttpsMetadata = false;
+
+    options.SaveToken = true;
+
+    options.TokenValidationParameters = new TokenValidationParameters()
+
+    {
+
+        ValidateIssuer = true,
+
+        ValidateAudience = true,
+
+        ValidateLifetime = true,
+
+        ValidateIssuerSigningKey = true,
+
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SecretKey"]))
+
+    };
+
+});
+
+#endregion
+
+app.UseAuthentication();
+
+app.UseAuthorization();
+

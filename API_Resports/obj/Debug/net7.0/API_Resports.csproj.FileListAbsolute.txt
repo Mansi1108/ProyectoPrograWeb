@@ -288,3 +288,4 @@ C:\Users\Melissa\Documents\URL\2023\Primer Ciclo\Programación Web\Proyecto\reSp
 C:\Users\Melissa\Documents\URL\2023\Primer Ciclo\Programación Web\Proyecto\reSports_Proyect_MM\API_Resports\obj\Debug\net7.0\API_Resports.pdb
 C:\Users\Melissa\Documents\URL\2023\Primer Ciclo\Programación Web\Proyecto\reSports_Proyect_MM\API_Resports\obj\Debug\net7.0\API_Resports.genruntimeconfig.cache
 C:\Users\Melissa\Documents\URL\2023\Primer Ciclo\Programación Web\Proyecto\reSports_Proyect_MM\API_Resports\obj\Debug\net7.0\ref\API_Resports.dll
+C:\Users\Melissa\Documents\URL\2023\Primer Ciclo\Programación Web\Proyecto\reSports_Proyect_MM\API_Resports\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
